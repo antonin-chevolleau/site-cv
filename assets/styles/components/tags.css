@@ -1,0 +1,23 @@
+/* ===== Liste d'étiquettes ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.tags li {
+  padding: 0.15em 0.6em;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* Niveau à côté de l'étiquette (ex : « bases », « notions ») */
+.tags__level {
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  color: var(--accent);
+  opacity: 0.8;
+}

@@ -1,0 +1,41 @@
+/* ===== Page ===== */
+body {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Le contenu ne dépasse pas 1440px, mais le fond du header et du footer prend toute la largeur */
+.header,
+main,
+.footer {
+  padding-inline: max(var(--gutter), (100% - var(--container)) / 2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-section);
+  padding-top: 48px;
+  padding-bottom: var(--space-section);
+}
+
+/* ===== Sections ===== */
+/* Laisse de la place pour le header fixe quand on clique sur un lien du menu */
+.section,
+.footer {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+.section__title {
+  margin-bottom: 1em;
+}
+.section__title::before {
+  content: "## ";
+  color: var(--accent);
+}
+
+.section__intro {
+  max-width: 65ch;
+  margin: -1em 0 2em;
+  color: var(--text-muted);
+}

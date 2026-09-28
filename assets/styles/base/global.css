@@ -1,0 +1,18 @@
+/* ===== Défilement fluide (sauf si l'utilisateur a désactivé les animations) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===== Contour visible quand on navigue au clavier ===== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Texte sélectionné ===== */
+::selection {
+  color: var(--bg);
+  background: var(--accent);
+}

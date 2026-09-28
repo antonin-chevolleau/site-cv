@@ -1,0 +1,65 @@
+/* ===== Reset (basé sur le reset de Josh Comeau) ===== */
+
+/* 1. Les bordures et le padding sont inclus dans la largeur */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Supprime les marges par défaut */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Améliore le rendu du texte */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Les images ne dépassent pas de leur conteneur */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Les champs de formulaire utilisent la même police que la page */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Les mots trop longs passent à la ligne */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Supprime le style par défaut des liens */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 8. Supprime les puces des listes */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* 9. Curseur main sur les boutons */
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+:root {
+  /* ===== Police ===== */
+  --font-primary: "JetBrains Mono", monospace;
+
+  /* ===== Tailles de texte ===== */
+  --fs-sm: clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem); /* 13px → 14px */
+  --fs-base: clamp(0.9375rem, 0.875rem + 0.25vw, 1rem); /* 15px → 16px */
+  --fs-md: clamp(1rem, 0.93rem + 0.3vw, 1.25rem); /* 16px → 20px */
+  --fs-lg: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* 18px → 24px */
+  --fs-xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem); /* 24px → 36px */
+
+  /* ===== Hauteurs de ligne ===== */
+  --lh-tight: 1.2; /* titres */
+  --lh-base: 1.6; /* texte */
+
+  /* ===== Mise en page ===== */
+  --container: 1440px; /* largeur max du contenu */
+  --gutter: clamp(16px, 4vw, 48px); /* marge sur les côtés */
+  --header-height: 72px;
+  --space-section: 96px; /* espace entre les sections */
+
+  /* ===== Bordures arrondies ===== */
+  --radius-sm: 0.5em; /* boutons, champs */
+  --radius: 12px; /* cartes */
+
+  /* ===== Animations ===== */
+  --transition: 0.3s ease-in-out;
+
+  /* ===== Couleurs ===== */
+  /* Fonds */
+  --bg: #0b0f14;
+  --bg-translucent: rgba(11, 15, 20, 0.8);
+  --surface: #121821;
+  --border: #1f2833;
+
+  /* Textes */
+  --text: #e6edf3;
+  --text-muted: #8b98a5;
+
+  /* Accent */
+  --accent: #3ddc97;
+  --accent-soft: rgba(61, 220, 151, 0.12);
+
+  /* Erreur */
+  --danger: #f85149;
+}

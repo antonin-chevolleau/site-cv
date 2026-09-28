@@ -1,0 +1,17 @@
+/* ===== Grille des compétences ===== */
+/* Autant de colonnes de 300px minimum que possible : 3 sur desktop, 1 sur mobile */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.5em;
+}
+
+/* ===== Carte de compétence ===== */
+.skill-card__title::before {
+  content: "$ ";
+  color: var(--accent);
+}
+
+.skill-card__text {
+  color: var(--text-muted);
+}

@@ -1,0 +1,32 @@
+/* ===== Texte ===== */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--text);
+}
+
+/* ===== Titres ===== */
+h1,
+h2,
+h3 {
+  line-height: var(--lh-tight);
+}
+
+h1 {
+  font-size: var(--fs-lg);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-md);
+}
+
+/* ===== Mot mis en avant ===== */
+.accent {
+  font-weight: 500;
+  color: var(--accent);
+}

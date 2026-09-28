@@ -1,0 +1,187 @@
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  height: var(--header-height);
+  background: var(--bg-translucent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== Logo ===== */
+.header__title {
+  position: relative;
+  padding: 0.25em 0.5em;
+}
+
+.header__prompt {
+  color: var(--accent);
+}
+
+/* Curseur de terminal qui clignote */
+.header__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  width: 4px;
+  height: 0.9em;
+  background: var(--text);
+  transform: translateY(-50%);
+  animation: blink 1s step-end infinite;
+}
+
+/* ===== Navigation ===== */
+.header__nav-list {
+  display: flex;
+  gap: 1em;
+}
+
+.header__nav-link {
+  position: relative;
+  padding: 0.25em 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Soulignement qui apparaît au survol */
+.header__nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  right: 0.5em;
+  bottom: 0.1em;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+.header__nav-link:hover::after,
+.header__nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ===== Bouton burger (visible seulement sur mobile) ===== */
+.header__burger {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* Les 3 barres : la barre du milieu + ::before (en haut) + ::after (en bas) */
+.header__burger-lines,
+.header__burger-lines::before,
+.header__burger-lines::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+  transition:
+    transform var(--transition),
+    background var(--transition);
+}
+.header__burger-lines {
+  position: relative;
+}
+.header__burger-lines::before,
+.header__burger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.header__burger-lines::before {
+  top: -6px;
+}
+.header__burger-lines::after {
+  top: 6px;
+}
+
+/* Menu ouvert : les barres forment une croix */
+.header:has(.header__nav:popover-open) .header__burger {
+  border-color: var(--accent);
+}
+.header:has(.header__nav:popover-open) .header__burger-lines {
+  background: transparent;
+}
+.header:has(.header__nav:popover-open) .header__burger-lines::before {
+  background: var(--accent);
+  transform: translateY(6px) rotate(45deg);
+}
+.header:has(.header__nav:popover-open) .header__burger-lines::after {
+  background: var(--accent);
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ===== Animations désactivées ===== */
+@media (prefers-reduced-motion: reduce) {
+  .header__title::after {
+    animation: none;
+  }
+}
+
+/* ===== Desktop ===== */
+/* La nav est un popover : le navigateur la cache tant qu'elle n'est pas ouverte.
+   Sur desktop elle doit toujours être visible, donc on enlève le style par défaut du popover. */
+@media (min-width: 769px) {
+  .header__nav {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    color: inherit;
+    background: none;
+    border: 0;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .header__burger {
+    display: grid;
+  }
+
+  /* Menu ouvert : panneau sous le header (le navigateur l'affiche et le cache tout seul) */
+  .header__nav {
+    position: fixed;
+    inset: var(--header-height) 0 auto 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 1em var(--gutter) 1.5em;
+    color: inherit;
+    background: var(--surface);
+    border: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0.25em;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 0.75em 0.5em;
+  }
+
+  .header__nav-link::after {
+    right: auto;
+    width: 2em;
+    transform-origin: left;
+  }
+}

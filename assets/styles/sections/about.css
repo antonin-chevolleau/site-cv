@@ -1,0 +1,90 @@
+/* ===== À propos ===== */
+.about__content {
+  display: flex;
+  gap: 2em;
+}
+
+.about__avatar {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  image-rendering: pixelated; /* garde les pixels nets */
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.about__text p {
+  margin-bottom: 0.2em;
+}
+
+/* ===== Tableau ===== */
+.about__table {
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+.about__table th,
+.about__table td {
+  padding: 1em 2em;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.about__table th {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ===== Liens GitHub / LinkedIn ===== */
+.about__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.about__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1.5em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.about__social-link img {
+  filter: invert(1); /* les icônes sont noires, on les passe en blanc */
+}
+.about__social-link:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .about__content {
+    flex-direction: column;
+  }
+
+  .about__avatar {
+    width: 200px;
+    height: auto;
+  }
+
+  .about__table th,
+  .about__table td {
+    padding: 0.75em 1em;
+  }
+}

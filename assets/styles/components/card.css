@@ -1,0 +1,14 @@
+/* ===== Carte (utilisée dans la frise et les compétences) ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: clamp(1em, 3vw, 1.5em);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition);
+}
+.card:hover {
+  border-color: var(--text-muted);
+}

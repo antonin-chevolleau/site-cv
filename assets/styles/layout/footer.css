@@ -1,0 +1,134 @@
+/* ===== Footer ===== */
+.footer {
+  padding-top: var(--space-section);
+  padding-bottom: 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+/* 2 colonnes sur desktop, 1 sur mobile */
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 3em;
+}
+
+/* ===== Coordonnées ===== */
+.footer__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.footer__infos li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.footer__label {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.footer__link {
+  width: fit-content;
+  overflow-wrap: anywhere; /* les longues URL passent à la ligne sur mobile */
+  transition: color var(--transition);
+}
+.footer__link:hover {
+  color: var(--accent);
+}
+
+/* ===== Bas de page ===== */
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 64px;
+  padding-top: 24px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Formulaire ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+/* Nom et Email côte à côte, l'un sous l'autre sur mobile */
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 1.25em;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form__label {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.form__label::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.75em 1em;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+.form__input:hover {
+  border-color: var(--text-muted);
+}
+.form__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+/* Bordure rouge si le champ est mal rempli (seulement après que l'utilisateur l'a touché) */
+.form__input:user-invalid {
+  border-color: var(--danger);
+}
+
+.form__textarea {
+  min-height: 8em;
+  resize: vertical;
+}
+
+.form__submit {
+  align-self: flex-start;
+  padding: 0.75em 1.5em;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition),
+    background var(--transition);
+}
+.form__submit:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Champ anti-spam : caché pour les humains, seuls les robots le remplissent */
+.form__honeypot {
+  display: none;
+}
